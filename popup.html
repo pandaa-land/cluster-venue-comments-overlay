@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="popup.css">
+    <title>Venue comments</title>
+  </head>
+  <body>
+    <main>
+      <h1>会場のコメント</h1>
+      <label>
+        幅
+        <input id="width" type="number" min="240" max="900" step="10">
+      </label>
+      <label>
+        高さ
+        <input id="height" type="number" min="180" max="1000" step="10">
+      </label>
+      <label>
+        読込間隔（秒）
+        <input id="intervalSec" type="number" min="3" max="300" step="1">
+      </label>
+      <section class="color-grid" aria-label="色設定">
+        <label>
+          背景色
+          <span class="color-controls">
+            <input id="backgroundColor" type="text" inputmode="text" placeholder="#12161f">
+            <input id="backgroundColorPicker" type="color" data-color-picker="backgroundColor" title="背景色を選択">
+            <input id="backgroundColorAlpha" type="range" min="0" max="1" step="0.01" data-alpha-slider="backgroundColor" title="背景色の透明度">
+            <input id="backgroundColorAlphaValue" type="number" min="0" max="1" step="0.01" data-alpha-input="backgroundColor" title="背景色の透明度">
+          </span>
+        </label>
+        <label>
+          背景隠し色
+          <span class="color-controls">
+            <input id="backdropColor" type="text" inputmode="text" placeholder="#12161f">
+            <input id="backdropColorPicker" type="color" data-color-picker="backdropColor" title="背景隠し色を選択">
+            <input id="backdropColorAlpha" type="range" min="0" max="1" step="0.01" data-alpha-slider="backdropColor" title="背景隠し色の透明度">
+            <input id="backdropColorAlphaValue" type="number" min="0" max="1" step="0.01" data-alpha-input="backdropColor" title="背景隠し色の透明度">
+          </span>
+        </label>
+        <label>
+          <span class="label-row">文字色 <span id="textColorWarning" class="warning" title="背景色と近いため、読みやすい文字色に自動補正しています" hidden>⚠ 補正中</span></span>
+          <span class="color-controls">
+            <input id="textColor" type="text" inputmode="text" placeholder="#ffffff">
+            <input id="textColorPicker" type="color" data-color-picker="textColor" title="文字色を選択">
+            <input id="textColorAlpha" type="range" min="0" max="1" step="0.01" data-alpha-slider="textColor" title="文字色の透明度">
+            <input id="textColorAlphaValue" type="number" min="0" max="1" step="0.01" data-alpha-input="textColor" title="文字色の透明度">
+          </span>
+        </label>
+        <label>
+          投稿者名色
+          <span class="color-controls">
+            <input id="authorColor" type="text" inputmode="text" placeholder="#9ee6ff">
+            <input id="authorColorPicker" type="color" data-color-picker="authorColor" title="投稿者名色を選択">
+            <input id="authorColorAlpha" type="range" min="0" max="1" step="0.01" data-alpha-slider="authorColor" title="投稿者名色の透明度">
+            <input id="authorColorAlphaValue" type="number" min="0" max="1" step="0.01" data-alpha-input="authorColor" title="投稿者名色の透明度">
+          </span>
+        </label>
+      </section>
+      <label class="check-field">
+        <input id="backdropVisible" type="checkbox">
+        背景を隠す
+      </label>
+      <label class="check-field">
+        <input id="shadowVisible" type="checkbox">
+        影を表示
+      </label>
+      <div class="actions">
+        <button id="toggle" type="button">表示切替</button>
+      </div>
+      <p id="status" role="status"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

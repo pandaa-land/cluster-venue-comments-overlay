@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "cluster Venue Comments Overlay",
+  "description": "Shows cluster event venue comments in a configurable overlay.",
+  "version": "0.1.0",
+  "permissions": ["storage", "activeTab", "tabs"],
+  "host_permissions": [
+    "https://cluster.mu/*",
+    "https://api.cluster.mu/*"
+  ],
+  "action": {
+    "default_title": "Venue comments",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://cluster.mu/e/*", "https://cluster.mu/*/e/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

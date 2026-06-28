@@ -1,0 +1,138 @@
+body {
+  width: 320px;
+  margin: 0;
+  color: #17202a;
+  background: #f7f8fb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding: 10px 12px;
+}
+
+h1 {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 16px;
+}
+
+label {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.label-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.warning {
+  color: #d97706;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.warning[hidden] {
+  display: none;
+}
+
+.check-field {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  gap: 6px;
+}
+
+.color-grid {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.color-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 32px 48px;
+  gap: 6px;
+  width: 100%;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 6px;
+  border: 1px solid #c9d1dc;
+  border-radius: 6px;
+  background: #fff;
+  font: inherit;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+.color-controls input[id$="Color"] {
+  grid-column: 1 / 3;
+}
+
+input[type="color"] {
+  grid-column: 3;
+  width: 32px;
+  min-width: 100%;
+  height: 31px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+input[data-alpha-slider] {
+  grid-column: 1 / 3;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+input[data-alpha-input] {
+  grid-column: 3;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+.actions {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+button {
+  min-height: 34px;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  background: #176b87;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #12566c;
+}
+
+#status {
+  grid-column: 1 / -1;
+  min-height: 16px;
+  margin: 0;
+  color: #5d6a78;
+  font-size: 12px;
+}
